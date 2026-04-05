@@ -1,12 +1,12 @@
-// import Register from "./pages/Register"
+import { useState } from "react";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
+export default function App() {
+  const [user, setUser] = useState(null);
 
-function App() {
-
-  return (
-    <div className="App">
-      {/* <Register /> */}
-    </div>
-  )
+  return user ? (
+    <Home user={user} setUser={setUser} />
+  ) : (
+    <Login setUser={setUser} />
+  );
 }
-
-export default App
