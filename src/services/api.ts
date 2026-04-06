@@ -10,8 +10,8 @@ export async function del<TResult>(url: string, body: unknown) {
   return await request<TResult>('DELETE', url, body);
 }
 
-async function request<TResult>(method: string, url: string, body?: unknown) {
-  const response = await fetch('https://localhost:7040/api/master/' + url, {
+async function request<TResult>(method: string, url: string, body?: unknown, askUser?: string) {
+  const response = await fetch('https://localhost:7040/api/master' + url, {
     method,
     body: body ? JSON.stringify(body) : undefined,
     headers: {
